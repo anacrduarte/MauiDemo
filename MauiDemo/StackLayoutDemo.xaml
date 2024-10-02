@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDemo.StackLayoutDemo"
+             Title="StackLayoutDemo">
+    <VerticalStackLayout Margin="20" HorizontalOptions="Start">
+        <HorizontalStackLayout VerticalOptions="Start">
+            <Label Text="Nome"/>
+            <Entry WidthRequest="150" HeightRequest="30"/>
+            <Label Text="Informe o nome" TextColor="Red"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout VerticalOptions="Start">
+            <Label Text="Idade"/>
+            <Entry WidthRequest="150" HeightRequest="30"/>
+            <Label Text="Informe a idade" TextColor="Red"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+    <!--<StackLayout Margin="20">
+        <Label 
+            Text="Texto 1"
+            FontSize="20"
+            BackgroundColor="Yellow" />
+        <Label 
+     Text="Texto 2"
+              FontSize="20"
+     BackgroundColor="Orange" />
+        <Label 
+     Text="Texto 3"
+              FontSize="20"
+     BackgroundColor="Red" />
+   
+        <StackLayout Margin="20" Padding="20,10,20,0">
+        
+                    <Label 
+            Text="Texto 4"
+                     FontSize="20"
+                   BackgroundColor="Blue"
+                        Margin="20"/>
+                    <Label 
+            Text="Texto 5"
+                     FontSize="20"
+            BackgroundColor="Gray"
+                        Margin="10,15"/>
+                    <Label 
+        Text="Texto 6"
+                 FontSize="20"
+        BackgroundColor="Salmon" 
+                        Margin="0,15,20,15"/>
+
+        </StackLayout>
+    </StackLayout>-->
+
+    <!--<StackLayout Margin="20">
+        <Label 
+            Text="SIGN IN"
+            FontSize="24" />
+        <Entry  
+            Placeholder="Utilizador"
+            PlaceholderColor="Black"/>
+        <Entry  
+     Placeholder="Palavra-passe"
+     PlaceholderColor="Black"/>
+        <Button Text="LOGIN" FontSize="Large"/>
+
+    </StackLayout>-->
+</ContentPage>

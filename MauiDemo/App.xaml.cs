@@ -10,7 +10,7 @@
             navPage.BarBackground = Colors.Yellow;
             navPage.BarTextColor = Colors.BlueViolet;
 
-            MainPage = new TabbedDemoPage();
+            MainPage = new NavigationPage(new AbsoluteLayoutDemoPage());
         }
     }
 }

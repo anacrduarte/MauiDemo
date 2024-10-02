@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.MauiPresentationControlsPage"
+             Title="Maui Presentation Controls Page">
+    <ScrollView>
+    <VerticalStackLayout Padding="10" Spacing="15">
+            <BoxView Color="Red"
+                 CornerRadius="25"
+                 WidthRequest="200"
+                 HeightRequest="200"
+                 VerticalOptions="Center"
+                 HorizontalOptions="Start"
+                     BackgroundColor="White"/>
+            <Label 
+            Text="Bem-Vindo &#10; ao .NET MAUI!"
+                CharacterSpacing="1"
+                BackgroundColor="Yellow"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                FontSize="Large"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                   FontSize="Medium"
+                   LineHeight="0.8"
+                   MaxLines="6"/>
+            <Label Text="Sublinhado"
+                    FontSize="Large"
+                    TextDecorations="Underline"/>
+            <Label Text="Tracejado"
+                    FontSize="Large"
+                    TextDecorations="Strikethrough"/>
+            <Label Text="Sublinhado e tracejado"
+                    FontSize="Large"
+                    TextDecorations="Underline,Strikethrough"/>
+
+
+            <Label Text="Maiúsculas"
+               FontSize="Large"
+               TextTransform="Uppercase"/>
+            <Label Text="Minúsculas"
+                     FontSize="Large"
+                     TextTransform="Lowercase"/>
+
+            <Ellipse Fill="Gray"
+                 Stroke="Blue"
+                 StrokeThickness="10"
+                 HeightRequest="80"
+                 WidthRequest="150"
+                 HorizontalOptions="Center"/>
+
+            <Line Stroke="Black"
+              X1="0"
+              Y1="0"
+              X2="300"
+              Y2="50"
+              StrokeThickness="5"/>
+
+            <Rectangle Fill="DarkGoldenrod"
+                   Stroke="Black"
+                   StrokeThickness="5"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   HorizontalOptions="End"
+                   RadiusX="50"
+                   RadiusY="50"/>
+
+            <Polygon Points="40,10 70,80 10,50"
+                 Fill="LightBlue"
+                 Stroke="Bisque"
+                 StrokeThickness="5"/>
+
+            <Polyline Points="0,0 10,30,
+                              15,0 18,60
+                              23,30 35,30 40,0
+                              43,60 48,30 100,30"
+                  Stroke="Red"/>
+
+            <Path Data="M 10,100 L 100,100 100,50Z"
+              Aspect="Uniform"
+              HorizontalOptions="Center"
+              Stroke="Black"/>
+
+            <Border Stroke="SandyBrown"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                Background="Blue"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                <Label Text="Bem-Vindo ao .NET MAUI"
+                       TextColor="White"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+            </Border>
+
+            <Image Source="dotnet_bot.png"
+                   Aspect="AspectFit"/>
+
+            <Image Source="https://macoratti.net/macoratti.gif"
+                   Aspect="AspectFit"
+                   HeightRequest="200"
+                   WidthRequest="200"/>
+
+            <Image Source="https://macoratti.net/1_pulando.gif"
+                   Aspect="AspectFit"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   IsAnimationPlaying="True"/>
+
+            <Frame BorderColor="Gray" CornerRadius="200">
+                <Image Source="dotnet_bot.png"/>
+            </Frame>
+
+            <Frame BorderColor="Gray" CornerRadius="10" Padding="8">
+                <StackLayout>
+                    <Label Text="Exemplo Card"
+                           FontSize="30"
+                           FontAttributes="Bold"/>
+                    <BoxView Color="Green"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill"/>
+                    <Label Text="Usar frame e stack layout"
+                            FontSize="20"/>
+                    
+                </StackLayout>
+            </Frame>
+
+            <WebView HeightRequest="500"
+                 Source="https://macoratti.net"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

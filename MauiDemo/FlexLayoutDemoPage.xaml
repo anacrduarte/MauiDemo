@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDemo.FlexLayoutDemoPage"
+             Title="FlexLayoutDemoPage">
+    <FlexLayout Direction="Column"
+                JustifyContent="SpaceEvenly"
+                AlignItems="Center">
+        <Label 
+            Text="Exemplo de FlexLayout"
+            FontSize="Large"
+            TextColor="Red"/>
+
+        <Image Source="dotnet_bot.png"/>
+
+        <Button Text="Botão sem funcão" FontSize="Large"/>
+
+        <Label Text="Ana Duarte - 2024" FontSize="Large"/>
+
+    </FlexLayout>
+</ContentPage>
