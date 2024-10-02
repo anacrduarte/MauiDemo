@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.MauiCommandControlsPage"
+             Title="Maui Command Controls Page">
+    <ScrollView>
+        <VerticalStackLayout>
+        <Button Text="Clique para rolar o texto"
+                BackgroundColor="Gray"
+                x:Name="btnDemo"
+                Clicked="btnDemo_Clicked" 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+        
+        <Label x:Name="lblDemo"
+            Text=".NET MAUI!"
+               TextColor="Blue"
+               FontSize="25"
+               FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="Clique para rolar o texto"
+           BackgroundColor="Green"
+                ImageSource="addbookmark.svg"
+           x:Name="btnDemo1"
+           Clicked="btnDemo_Clicked" 
+                IsEnabled="False"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"/>
+        <ImageButton 
+                Source="dotnet_bot.svg" 
+                Aspect="AspectFit"
+                x:Name="btnImgDemo"
+                BorderColor="Black"
+                Clicked="btnImgDemo_Clicked" 
+                HeightRequest="100"
+                WidthRequest="100"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+        <StackLayout Padding="20">
+            <Label Text="Qual o seu animal favorito?"
+                   FontSize="Large" TextColor="Blue"/>
+            <RadioButton Content="Gato" Value="Gato" GroupName="Pets"/>
+            <RadioButton Content="Cão" Value="Cão" GroupName="Pets"/>
+            <RadioButton Content="Galo" Value="Galo" IsChecked="True" GroupName="Pets"/>
+        </StackLayout>
+
+        <StackLayout Padding="20" RadioButtonGroup.GroupName="Pets2">
+            <Label Text="Qual o seu animal favorito?"
+               FontSize="Large" TextColor="Blue"/>
+            <RadioButton Content="Gato" Value="Gato"
+                         CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton Content="Cão" CheckedChanged="RadioButton_CheckedChanged"  Value="Cão"/>
+            <RadioButton Content="Galo" CheckedChanged="RadioButton_CheckedChanged" Value="Galo"/>
+            <Label Text="" x:Name="lblPets2"/>
+            
+        </StackLayout>
+
+        <StackLayout>
+            <SearchBar Placeholder="Procurar produto"
+                       SearchButtonPressed="SearchBar_SearchButtonPressed"
+                       BackgroundColor="Gray"/>
+
+        </StackLayout>
+
+        <SwipeView BackgroundColor="AliceBlue" >
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem BackgroundColor="Aqua"
+                               IconImageSource="close.svg"
+                               Invoked="SwipeItem_Invoked"
+                               Text="Gato"/>
+                    <SwipeItem BackgroundColor="LightPink"
+                             IconImageSource="addbookmark.svg"
+                             Invoked="SwipeItem_Invoked"
+                             Text="Galo"/>  
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <SwipeView.RightItems>
+                <SwipeItem BackgroundColor="WhiteSmoke"
+              IconImageSource="close.svg"
+              Invoked="SwipeItem_Invoked"
+              Text="Cão"/>
+            </SwipeView.RightItems>
+            <Grid BackgroundColor="Beige"
+                  HeightRequest="60"
+                  WidthRequest="300">
+                <Label Text="&lt;== Deslizar ==>"
+                       FontSize="Large"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+
+            </Grid>
+        </SwipeView>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

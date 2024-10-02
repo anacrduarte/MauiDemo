@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.MauiEditControlsPage"
+             Title="Maui Edit Controls Page">
+    <ScrollView>
+    <VerticalStackLayout Margin="5">
+        <Entry x:Name="Entry1"
+               Placeholder="view Entry"
+               PlaceholderColor="Blue"
+               FontSize="Medium"
+               IsReadOnly="False"
+               HeightRequest="50"
+               MaxLength="20"
+               IsPassword="False"
+               Keyboard="Text"
+               CharacterSpacing="5"
+               ClearButtonVisibility="WhileEditing"
+               ReturnType="Search"
+               TextChanged="Entry1_TextChanged"
+               Completed="Entry1_Completed"/>
+
+        <Editor x:Name="Editor1"
+                Placeholder="view Editor"
+                PlaceholderColor="Black"
+                AutoSize="TextChanges"
+                FontSize="Large"
+                IsReadOnly="False"
+                Keyboard="Text"
+                CharacterSpacing="1"
+            />
+
+        <StackLayout Padding="40" Spacing="40">
+            <Label Text="Activity Indicator"
+                   FontSize="Large"/>
+            <ActivityIndicator IsRunning="True"/>
+            <ActivityIndicator IsRunning="True" Color="Orange"/>
+            
+        </StackLayout>
+
+        <StackLayout Padding="40" Spacing="40">
+            <Label Text="Progress Bar"
+               FontSize="Large"/>
+            <ProgressBar Progress="0.5"/>
+            <ProgressBar Progress="0.8" ProgressColor="Orange"/>
+
+        </StackLayout>
+
+        <StackLayout Margin="20">
+            <Label Text="Progresso do projeto"
+        FontSize="Medium"/>
+            <ProgressBar x:Name="ProgressBar1" Progress="0.10" ProgressColor="Red"/>
+            <Button Text="Progredir até 90" BackgroundColor="Green" FontSize="Medium"
+                    Clicked="Button_Clicked"/>
+
+        </StackLayout>
+
+        <StackLayout>
+            <ActivityIndicator x:Name="ActivityIndicator1"
+                               IsRunning="{Binding IsBusy}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Color="Orange"/>
+        </StackLayout>
+
+        <StackLayout Padding="20" Spacing="2"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Nome do Utilizador" TextColor="DarkGray"
+                    FontSize="20" FontAttributes="Bold"/>
+            <Entry
+              Placeholder="Nome do utilizador"
+              PlaceholderColor="Blue"
+              FontSize="20"
+              Keyboard="Text"
+              TextColor="Brown"/>
+
+            <Label Text="Palavra-passe" TextColor="DarkGray"
+            FontSize="20" FontAttributes="Bold"/>
+
+            <Entry
+                     Placeholder="Palavra-passe"
+                     PlaceholderColor="Blue"
+                     FontSize="20"
+                     Keyboard="Numeric"
+                   IsPassword="True"
+                     TextColor="Brown"/>
+
+        </StackLayout>
+        <StackLayout Padding="10" VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand">
+            <Button x:Name="BtnLogin" Text="Login"
+                    FontSize="Large"
+                    BackgroundColor="Black"
+                   />
+        </StackLayout>
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

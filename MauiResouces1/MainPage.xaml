@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiResouces1.MainPage">
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Image Source="{Binding Foto}" Aspect="Fill"/>
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Label Text="{Binding Nome}" FontSize="30"/>
+            <Label Text="{Binding Sobrenome}" FontSize="30"/>
+            <Label Text="{Binding Idade}" FontSize="30"/>
+        </VerticalStackLayout>
+    </StackLayout>
+    <!--<VerticalStackLayout>
+        <Label Text="Fontes..."
+               TextColor="Wheat"
+               FontSize="55"
+               FontFamily="MyFont"/>
+    </VerticalStackLayout>-->
+    <!--<VerticalStackLayout Spacing="20"
+                         BackgroundColor="Black"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+        <Image>
+            <Image.Source>
+                <FontImageSource
+                    FontFamily="IconsFont"
+                    Glyph="&#xF14A;"
+                    Size="40"/>
+            </Image.Source>
+        </Image>
+        <Image>
+            <Image.Source>
+                <FontImageSource
+                FontFamily="IconsFont"
+                Glyph="&#xF0E5;"
+                Size="40"/>
+            </Image.Source>
+        </Image>
+        <Image BackgroundColor="Wheat"
+               Source="{FontImage &#xE800;, FontFamily=IconsFont, Size=44 }"/>
+
+
+    </VerticalStackLayout>-->
+
+</ContentPage>

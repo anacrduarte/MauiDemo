@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiSplitTheBill.MainPage"
+             BackgroundColor="Black">
+
+    <ContentPage.Resources>
+        <Color x:Key="SectionColor">#64BBB7</Color>
+        <Color x:Key="ClearFont">#e3e3e3</Color>
+        <Color x:Key="ButtonColour">#000000</Color>
+    </ContentPage.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height=".7*" />
+        </Grid.RowDefinitions>
+
+        <Grid BackgroundColor="DimGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*" />
+                <RowDefinition Height=".8*" />
+            </Grid.RowDefinitions>
+            <Label
+                 Grid.ColumnSpan="3"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Center"
+                 Text="Total por Pessoa"
+                 FontSize="Medium"
+                 TextColor="{StaticResource ClearFont}" />
+            <Label
+                 x:Name="lblTotal"
+                 Grid.Row="1"
+                 FontAttributes="Bold"
+                 FontSize="30"
+                 FontFamily="RobotBold"
+                 HorizontalTextAlignment="Center"
+                 Text="0,00€"
+                 TextColor="Yellow"
+                 VerticalOptions="CenterAndExpand" />
+            <VerticalStackLayout
+                 Grid.Row="1"
+                 Grid.Column="2"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+                <Label Text="SUBTOTAL" 
+                        TextColor="{StaticResource ClearFont}" 
+                        FontSize="Medium"/>
+                <Label
+                     x:Name="lblSubtotal"
+                     FontAttributes="Bold"
+                     Text="0.00€"
+                     FontSize="Medium"
+                     TextColor="{StaticResource ClearFont}" />
+                <Label
+                     Margin="0,10,0,0"
+                     Text="Gorjeta"
+                     FontSize="Medium"
+                     FontAttributes="Bold"
+                     TextColor="{StaticResource ClearFont}" />
+                <Label
+                     x:Name="lblTipPeople"
+                     FontAttributes="Bold"
+                     Text="0.00€"
+                     FontSize="Medium"
+                     TextColor="{StaticResource ClearFont}" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,15,0,0" 
+           Padding="10"
+           BackgroundColor="DimGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*" />
+                <ColumnDefinition Width=".7*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label
+             Text="Conta: €"
+             FontAttributes="Bold"
+             FontSize="Medium"
+             TextColor="{StaticResource ClearFont}"
+             VerticalOptions="Center" />
+            <Entry
+             x:Name="txtBill"
+             Grid.Column="1"
+             BackgroundColor="{StaticResource SectionColor}"
+             Completed="txtBill_Completed"
+             Keyboard="Numeric"
+             Text=""
+             FontSize="25"
+             FontFamily="RobotBold"
+             TextColor="{StaticResource ClearFont}"
+             HorizontalTextAlignment="End"
+             VerticalOptions="Center"/>
+
+            <Label
+             Grid.Row="1"
+             Text="% Gorjeta"
+             FontAttributes="Bold"
+             FontSize="Medium"
+             TextColor="{StaticResource ClearFont}"
+             VerticalOptions="Center" />
+            <HorizontalStackLayout
+             Grid.Row="1"
+             Grid.Column="1"
+             HeightRequest="70"
+             HorizontalOptions="CenterAndExpand"
+             Spacing="10">
+                <Button
+                 Clicked="Button_Clicked"
+                 BackgroundColor="{StaticResource ButtonColour}"
+                 Text="10%"
+                 FontAttributes="Bold"
+                 FontSize="Medium"
+                 WidthRequest="70" />
+                <Button
+                 Clicked="Button_Clicked"
+                 BackgroundColor="{StaticResource ButtonColour}"
+                 Text="15%"
+                 FontAttributes="Bold"
+                 FontSize="Medium"
+                 WidthRequest="70" />
+                <Button
+                 Clicked="Button_Clicked"
+                 BackgroundColor="{StaticResource ButtonColour}"
+                 Text="20%"
+                 FontAttributes="Bold"
+                 FontSize="Medium"
+                 WidthRequest="70" />
+
+            </HorizontalStackLayout>
+            <Label
+             x:Name="lblTip"
+             Grid.Row="2"
+             Text="Gorjeta: 0%"
+             FontAttributes="Bold"
+             FontSize="Medium"
+             TextColor="{StaticResource ClearFont}"
+             VerticalOptions="Center" />
+            <Slider
+             x:Name="sldTip"
+             Grid.Row="2"
+             Grid.Column="1"
+             Maximum="50"
+             Minimum="0"
+             ValueChanged="sldTip_ValueChanged" />
+            <Label
+             Grid.Row="3"
+             Text="/ por : "
+             FontAttributes="Bold"
+             FontSize="Medium"
+             TextColor="{StaticResource ClearFont}"
+             VerticalOptions="Center" />
+            <HorizontalStackLayout
+             Grid.Row="3"
+             Grid.Column="1"
+             HorizontalOptions="Center"
+             VerticalOptions="Center">
+                <Button
+                 x:Name="btnLess"
+                 Clicked="btnLess_Clicked"
+                 Text="-"
+                 BackgroundColor="{StaticResource ButtonColour}"
+                 WidthRequest="70" />
+                <Label
+                 x:Name="lblNoPeople"
+                 Margin="-5,0,-5,0"
+                 BackgroundColor="{StaticResource SectionColor}"
+                 FontSize="25"
+                 FontAttributes="Bold"
+                 HeightRequest="50"
+                 HorizontalOptions="Center"
+                 HorizontalTextAlignment="Center"
+                 Text="1"
+                 TextColor="{StaticResource ClearFont}"
+                 VerticalOptions="Center"
+                 VerticalTextAlignment="Center"
+                 WidthRequest="100" />
+                <Button
+                 x:Name="btnPlus"
+                 BackgroundColor="{StaticResource ButtonColour}"
+                 Clicked="btnPlus_Clicked"
+                 Text="+"
+                 WidthRequest="70" />
+            </HorizontalStackLayout>
+
+            <Button  
+             Grid.Row="4" 
+             x:Name ="btnStart" 
+             Clicked="btnStart_Clicked"
+             Grid.ColumnSpan="2"  HeightRequest="70" 
+             BackgroundColor="{StaticResource ButtonColour}"
+             Text="Iniciar"
+             FontFamily="RobotBold"
+             FontSize="30"
+             />
+        </Grid>
+    </Grid>
+
+</ContentPage>

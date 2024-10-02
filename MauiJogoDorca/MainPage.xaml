@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiJogoDorca.MainPage">
+
+    <Grid RowDefinitions="0.6*,0.4*" RowSpacing="20">
+        <VerticalStackLayout Spacing="10">
+            <Label
+                FontAttributes="Bold"
+                FontSize="30"
+                TextColor="Red"
+                HorizontalOptions="Center"
+                Text="{Binding StatusGame}"/>
+            <Image HeightRequest="120" Source="{Binding CurrentImage}"/>
+            <Label
+                 FontSize="40"
+                 HorizontalOptions="Center"
+                 Text="{Binding Highlight}"
+                VerticalOptions="Center"/>
+            <Label
+                  FontAttributes="Bold"
+                  FontSize="30"
+                  TextColor="Red"
+                  HorizontalOptions="Center"
+                  Text="{Binding Message}"/>
+            <Button
+                HorizontalOptions="Center"
+                Text="Apagar"
+                TextColor="White"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                WidthRequest="100"
+                BackgroundColor="Black"
+                Clicked="Button_Clicked_2"/>
+            
+        </VerticalStackLayout>
+        
+        <FlexLayout x:Name="LetterContainer"
+                Grid.Row="1"
+                        BindableLayout.ItemsSource="{Binding Letters}"
+                        JustifyContent="SpaceEvenly"
+                        Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Button
+                            HeightRequest="50"
+                            WidthRequest="50"
+                            Text="{Binding .}"
+                            FontAttributes="Bold"
+                            BackgroundColor="Black"
+                            Clicked="Button_Clicked"/>
+
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+                
+                
+            </FlexLayout>
+
+       
+    </Grid>
+
+</ContentPage>
